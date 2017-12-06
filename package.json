@@ -1,0 +1,35 @@
+{
+  "name": "play-ground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "precommit": "lint-staged",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "linters":{
+      "**/*.js": [
+        "prettier --config .prettierrc --write",
+        "git add"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reika0717/play-ground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reika0717/play-ground/issues"
+  },
+  "homepage": "https://github.com/reika0717/play-ground#readme"
+}
