@@ -1,3 +1,11 @@
-$('#button').on('click', function() {
-  $('#box2').toggleClass('action')
+$('.button').on('click', () => {
+  $('.box2').toggleClass('action')
+})
+
+var count = 1
+
+$('.box3').on('transitionend', e => {
+  if (e.originalEvent.propertyName === 'width') {
+    $('.count').text(count++)
+  }
 })
