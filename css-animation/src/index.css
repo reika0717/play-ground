@@ -6,12 +6,13 @@
 }
 
 .box1:hover{
-  background: : #fff;
+  background: #ccc;
   width: 300px;
 }
 
 .action{
   transform: translateX(300px);
+  background: #ccc;
 }
 
 .box3:hover{
@@ -39,14 +40,18 @@
   }
 }
 
+.box5Wrapper{
+  height: 123px;
+}
+
 .box5{
   width: 50px;
   height: 50px;
   background-color: gray;
-  animation: h 1s ease 0s alternate forwards,
-             w 1s ease 1s alternate forwards,
-             h 1s ease 2s reverse forwards,
-             w 1s ease 3s reverse forwards
+  animation: h 1s ease 0s  alternate forwards,
+             w 1s ease 1s  alternate forwards,
+             h 1s ease 2s  reverse forwards,
+             w 1s ease 3s  reverse forwards
 }
 
 @keyframes h {
@@ -65,5 +70,62 @@
   }
   100%{
     width: 100px;
+  }
+}
+.container{
+  width: 400px;
+  height: 220px;
+  position: relative;
+}
+
+.title{
+  font-size: 30px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+}
+
+.title span{
+  width: 100%;
+  clip-path: polygon(100% 0,100% 100%,0 100%,0 80%);
+  transform: translateY(-50px);
+  opacity: 0;
+  animation-name: titleAnimation;
+  animation-timing-function: ease;
+  animation-duration: 3s;
+  animation-delay: 0.6s;
+}
+
+.title span:first-child{
+  animation-delay: 0.7s;
+}
+
+.title span:last-child{
+  animation-delay: 0.5s;
+}
+
+@keyframes titleAnimation {
+  0%{
+    transform: translateY(-50px);
+    opacity: 0;
+    clip-path:polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  }
+
+  20%{
+    transform: translateY(0);
+    opacity: 1;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+
+  80%{
+    transform: translateY(0);
+    opacity: 1;
+    clip-path:polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+
+  100%{
+    transform: translateY(50px);
+    opacity: 0;
+    clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
   }
 }
