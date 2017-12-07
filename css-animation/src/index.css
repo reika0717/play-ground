@@ -18,3 +18,23 @@
   width: 300px;
   background: #ccc;
 }
+
+.box4{
+  animation: rotation 2s ease 0s 5 alternate none running;
+}
+
+@keyframes rotation {
+  0%{
+    transform: scale(.3)
+  }
+
+  50%{
+    transform: scale(.6) rotate(-45deg);
+    background: red;
+  }
+
+  100%{
+    transform: scale(1) rotate(180deg);
+    background: blue;
+  }
+}
