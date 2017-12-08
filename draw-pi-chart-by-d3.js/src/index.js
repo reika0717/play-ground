@@ -1,11 +1,11 @@
 import $ from 'jquery'
-import find from 'lodash/find'
-// import d3 from 'd3'
+import _ from 'lodash'
+import * as d3 from 'd3'
 
 /*JSONファイル読み込み*/
 $.getJSON('/score.json', function(data) {
   var grade1 = data.examResults.grade1
-  var mathScore = find(grade1, {group_cd: 'Math'}).values
+  var mathScore = _.find(grade1, {group_cd: 'Math'}).values
   var mathScoreCount = mathScore.map(data => data.count)
 
   //点数をグレード分け
@@ -32,11 +32,11 @@ $.getJSON('/score.json', function(data) {
   // .attr("transform", "translate(100,100)");
   //
   // var r = 100;
-  // var arc = d3.svg.arc()
+  // var arc = d3.arc()
   // .innerRadius(80)
   // .outerRadius(r);
   //
-  // var pie = d3.layout.pie();
+  // var pie = d3.pie();
   //
   // svg.selectAll("path").data(pie(scoreListSorted)).enter() // pie(data)で変換している。
   // .append("path")
