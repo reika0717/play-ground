@@ -5,8 +5,10 @@
   "main": "index.js",
   "dependencies": {
     "husky": "^0.14.3",
+    "jquery": "^3.2.1",
     "lint-staged": "^6.0.0",
-    "prettier": "^1.9.1"
+    "prettier": "^1.9.1",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {},
   "scripts": {
@@ -14,7 +16,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
-    "linters":{
+    "linters": {
       "**/*.js": [
         "prettier --config .prettierrc --write",
         "git add"
