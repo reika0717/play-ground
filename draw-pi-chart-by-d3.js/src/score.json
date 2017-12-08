@@ -1,0 +1,52 @@
+{
+    "examResults": {
+        "grade1": [
+            {
+                "group_cd": "Math",
+                "group_nm": "数学",
+                "values": [
+                    {
+                        "name": "Tom",
+                        "count": 92
+                    },
+                    {
+                        "name": "Michael",
+                        "count": 65
+                    },
+                    {
+                        "name": "Patrick",
+                        "count": 55
+                    },
+                    {
+                        "name": "Mary",
+                        "count": 73
+                    },
+                    {
+                        "name": "Christen",
+                        "count": 65
+                    },
+                    {
+                        "name": "Kevin",
+                        "count": 72
+                    },
+                    {
+                        "name": "Perry",
+                        "count": 56
+                    },
+                    {
+                        "name": "Mickey",
+                        "count": 63
+                    },
+                    {
+                        "name": "Helen",
+                        "count": 68
+                    },
+                    {
+                        "name": "Mike",
+                        "count": 71
+                    }
+                ]
+            }
+        ]
+    }
+}
