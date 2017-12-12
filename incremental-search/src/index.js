@@ -69,6 +69,13 @@ function init() {
     const matched = [...list1, ...list2].filter(name => name.match(re))
     showOptions(matched)
   })
+
+  optionsEl.addEventListener('click', event => {
+    const name = event.target.innerText
+    inputEl.value = name
+    optionsEl.innerHTML = ''
+    optionsEl.style.display = 'none'
+  })
 }
 
 document.addEventListener('DOMContentLoaded', init)
