@@ -40,12 +40,13 @@ const list2 = [
   'Tomoaki Fujita',
 ]
 
-function showOptions(names) {
+const showOptions = names => {
   const el = document.getElementById('js-options')
   el.innerHTML = ''
+
   for (const name of names) {
     const nameEl = document.createElement('div')
-    nameEl.innerText = name
+    nameEl.innerHTML = name
     el.append(nameEl)
   }
 
@@ -56,25 +57,28 @@ function showOptions(names) {
   }
 }
 
-function init() {
-  const inputEl = document.getElementById('js-input')
-  const optionsEl = document.getElementById('js-options')
-  inputEl.addEventListener('keyup', event => {
-    const input = event.target.value
-    const re = new RegExp(input, 'i')
-    if (!input) {
+const init = () => {
+  const input = document.getElementById('js-input')
+  const options = document.getElementById('js-options')
+
+  input.addEventListener('keyup', event => {
+    console.log('ho')
+    const name = event.target.value
+    const re = new RegExp(name, 'i')
+
+    if (!name) {
       return showOptions([])
     }
 
-    const matched = [...list1, ...list2].filter(name => name.match(re))
-    showOptions(matched)
+    const names = [...list1, ...list2].filter(name => name.match(re))
+    showOptions(names)
   })
 
-  optionsEl.addEventListener('click', event => {
+  options.addEventListener('click', event => {
     const name = event.target.innerText
-    inputEl.value = name
-    optionsEl.innerHTML = ''
-    optionsEl.style.display = 'none'
+    input.value = name
+    options.innerHTML = ''
+    options.style.display = 'none'
   })
 }
 
