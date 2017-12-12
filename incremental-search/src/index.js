@@ -40,10 +40,35 @@ const list2 = [
   'Tomoaki Fujita',
 ]
 
-const list3 = ['hi']
+function showOptions(names) {
+  const el = document.getElementById('js-options')
+  el.innerHTML = ''
+  for (const name of names) {
+    const nameEl = document.createElement('div')
+    nameEl.innerText = name
+    el.append(nameEl)
+  }
 
-if (list3.length) {
-  console.log('truth')
-} else {
-  console.log('false')
+  if (names.length) {
+    el.style.display = 'block'
+  } else {
+    el.style.display = 'none'
+  }
 }
+
+function init() {
+  const inputEl = document.getElementById('js-input')
+  const optionsEl = document.getElementById('js-options')
+  inputEl.addEventListener('keyup', event => {
+    const input = event.target.value
+    const re = new RegExp(input, 'i')
+    if (!input) {
+      return showOptions([])
+    }
+
+    const matched = [...list1, ...list2].filter(name => name.match(re))
+    showOptions(matched)
+  })
+}
+
+document.addEventListener('DOMContentLoaded', init)
