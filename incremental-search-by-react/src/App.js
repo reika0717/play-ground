@@ -45,10 +45,21 @@ class App extends Component {
     }
   }
 
+  init(input) {
+    alert(input)
+  }
+
   render() {
+    let input = ''
     return (
       <div>
-        <input type="text" />
+        <input
+          type="text"
+          ref={node => (input = node)}
+          onKeyUp={() => {
+            this.init(input.value)
+          }}
+        />
         <ul>{this.state.list.map(data => <li>{data}</li>)}</ul>
       </div>
     )
