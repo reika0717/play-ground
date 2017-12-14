@@ -46,7 +46,15 @@ class App extends Component {
   }
 
   init(input) {
-    alert(input)
+    const re = new RegExp(input, 'i')
+
+    if (!input) {
+      this.setState({...this.state})
+    }
+
+    const names = [...this.state.list].filter(name => name.match(re))
+    const newState = {...this.state, list: names}
+    return newState
   }
 
   render() {
@@ -57,7 +65,7 @@ class App extends Component {
           type="text"
           ref={node => (input = node)}
           onKeyUp={() => {
-            this.init(input.value)
+            this.setState(this.init(input.value))
           }}
         />
         <ul>{this.state.list.map(data => <li>{data}</li>)}</ul>
