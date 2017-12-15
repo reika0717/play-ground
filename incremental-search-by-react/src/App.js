@@ -42,6 +42,7 @@ class App extends Component {
         'Kentaro Okuno',
         'Tomoaki Fujita',
       ],
+      newlist: [],
     }
   }
 
@@ -53,8 +54,7 @@ class App extends Component {
     }
 
     const names = [...this.state.list].filter(name => name.match(re))
-    const newState = {...this.state, list: names}
-    return newState
+    this.setState({...this.state, newlist: names})
   }
 
   render() {
@@ -65,10 +65,10 @@ class App extends Component {
           type="text"
           ref={node => (input = node)}
           onKeyUp={() => {
-            this.setState(this.init(input.value))
+            this.init(input.value)
           }}
         />
-        <ul>{this.state.list.map(data => <li>{data}</li>)}</ul>
+        <ul>{this.state.newlist.map(data => <li>{data}</li>)}</ul>
       </div>
     )
   }
